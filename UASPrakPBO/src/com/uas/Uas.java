@@ -171,6 +171,11 @@ public class Uas extends javax.swing.JFrame {
 
         uangakhir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         uangakhir.setText("Uang Akhir");
+        uangakhir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uangakhirActionPerformed(evt);
+            }
+        });
 
         hapussemua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hapussemua.setText("Hapus Semua");
@@ -433,6 +438,19 @@ public class Uas extends javax.swing.JFrame {
             hargabarang3.setText(String.valueOf(hrgbrg3));
         }else{
             hargabarang3.setText(String.valueOf("0"));
+        }
+    }                                         
+
+    private void uangakhirActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        double hargasetelahdiskon,uangbayar,uangakhir;
+        hargasetelahdiskon=Double.parseDouble(afterdiskon.getText());
+        uangbayar=Double.parseDouble(bayar.getText());
+        uangakhir=uangbayar-hargasetelahdiskon;
+        if(uangakhir >=0){
+            showMessageDialog(null, "uang kembalian : "+uangakhir);
+        }else{
+            showMessageDialog(null, "uang kurang : "+ uangakhir);
         }
     }                                         
 
