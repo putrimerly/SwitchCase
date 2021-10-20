@@ -82,8 +82,18 @@ public class Uas extends javax.swing.JFrame {
         });
 
         rbBarang2.setText("Barang 2");
+        rbBarang2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbBarang2ActionPerformed(evt);
+            }
+        });
 
         rbBarang3.setText("Barang 3");
+        rbBarang3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbBarang3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Harga Barang");
@@ -383,8 +393,31 @@ public class Uas extends javax.swing.JFrame {
 
     private void rbBarang1ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
+        double hrgbrg1=25000;
         if(rbBarang1.isSelected()){
-            
+            hargabarang1.setText(String.valueOf(hrgbrg1));
+        }else{
+            hargabarang1.setText(String.valueOf("0"));
+        }
+    }                                         
+
+    private void rbBarang2ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        double hrgbrg2=50000;
+        if(rbBarang2.isSelected()){
+            hargabarang2.setText(String.valueOf(hrgbrg2));
+        }else{
+            hargabarang2.setText(String.valueOf("0"));
+        }
+    }                                         
+
+    private void rbBarang3ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        double hrgbrg3=75000;
+        if(rbBarang3.isSelected()){
+            hargabarang3.setText(String.valueOf(hrgbrg3));
+        }else{
+            hargabarang3.setText(String.valueOf("0"));
         }
     }                                         
 
