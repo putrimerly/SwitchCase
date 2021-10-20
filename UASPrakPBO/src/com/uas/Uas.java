@@ -179,6 +179,11 @@ public class Uas extends javax.swing.JFrame {
 
         hapussemua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hapussemua.setText("Hapus Semua");
+        hapussemua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapussemuaActionPerformed(evt);
+            }
+        });
 
         keluar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         keluar.setText("Keluar");
@@ -447,12 +452,29 @@ public class Uas extends javax.swing.JFrame {
         hargasetelahdiskon=Double.parseDouble(afterdiskon.getText());
         uangbayar=Double.parseDouble(bayar.getText());
         uangakhir=uangbayar-hargasetelahdiskon;
+        totalakhir.setText(String.valueOf(uangakhir));
         if(uangakhir >=0){
             showMessageDialog(null, "uang kembalian : "+uangakhir);
         }else{
             showMessageDialog(null, "uang kurang : "+ uangakhir);
         }
     }                                         
+
+    private void hapussemuaActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        hargabarang1.setText(" ");
+        hargabarang2.setText(" ");
+        hargabarang3.setText("");
+        jumlahbarang1.setText("");
+        jumlahbarang2.setText("");
+        jumlahbarang3.setText("");
+        diskonbarang1.setText("");
+        diskonbarang2.setText("");
+        diskonbarang3.setText("");
+        totalhargabarang1.setText("");
+        totalhargabarang2.setText("");
+        totalhargabarang3.setText("");
+    }                                          
 
     /**
      * @param args the command line arguments
