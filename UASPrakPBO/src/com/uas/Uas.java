@@ -388,6 +388,21 @@ public class Uas extends javax.swing.JFrame {
                 totalhargabarang3.setText(String.valueOf(totalhrg));
             }
             
+            double totalhrg1,totalhrg2,totalhrg3,totalbyr,tambahdiskon5persen=0,diskon5persen=0.05,hasil;
+            totalhrg1=Double.parseDouble(totalhargabarang1.getText());
+            totalhrg2=Double.parseDouble(totalhargabarang2.getText());
+            totalhrg3=Double.parseDouble(totalhargabarang3.getText());
+            totalbyr= totalhrg1+totalhrg2+totalhrg3;
+            totalpembayaran.setText(String.valueOf(totalbyr));
+            if(totalbyr >=1000000){
+                tambahdiskon5persen=totalbyr*diskon5persen;
+                diskon5.setText(String.valueOf(tambahdiskon5persen));
+                hasil = totalbyr-tambahdiskon5persen;
+                afterdiskon.setText(String.valueOf(hasil));
+            }else{
+                afterdiskon.setText(String.valueOf(totalpembayaran));
+            }
+            
             
     }                                     
 
